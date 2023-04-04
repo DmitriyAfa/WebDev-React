@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Counter } from "../components/Counter";
 import { AppRouter } from "./providers/router";
 import './styles/index.scss'
 
