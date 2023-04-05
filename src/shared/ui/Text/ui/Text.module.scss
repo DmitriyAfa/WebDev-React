@@ -1,0 +1,123 @@
+.title {
+  color: var(--primary-color);
+}
+
+.text {
+  color: var(--secondary-color);
+}
+
+.text_primary {
+  .text {
+    color: var(--primary-color);
+  }
+}
+
+.neon,
+.neon_secondary {
+  .title {
+    text-shadow: var(--flick-small-text-shadow);
+    animation: flicker .5s infinite alternate;
+  }
+
+  .text {
+    text-shadow: var(--flick-small-text-shadow);
+    animation: flicker .5s infinite alternate;
+  }
+}
+
+.neon_secondary {
+  .title {
+    color: var(--secondary-color);
+  }
+
+  .text {
+    color: var(--tertiary-color);
+  }
+}
+
+@keyframes flicker {
+
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: var(--flick-big-text-shadow);
+  }
+
+  20%,
+  24%,
+  55% {
+    text-shadow: var(--flick-small-text-shadow);
+    ;
+  }
+}
+
+// уберем анимацю для людей с ограниченными возможностями
+@media screen and (prefers-reduced-motion) {
+  h1 {
+    animation: none;
+  }
+
+  .neon,
+  .neon_secondary {
+    .title {
+      text-shadow: var(--flick-small-text-shadow);
+      animation: none;
+    }
+
+    .text {
+      text-shadow: var(--flick-small-text-shadow);
+      animation: none;
+    }
+  }
+
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.size_m {
+  .title {
+    font: var(--font-l);
+  }
+
+  .text {
+    font: var(--font-m);
+  }
+}
+
+.size_l {
+  .title {
+    font: var(--font-xl);
+  }
+
+  .text {
+    font: var(--font-l);
+  }
+}
+
+.size_xl {
+  .title {
+    font: var(--font-xxl);
+  }
+
+  .text {
+    font: var(--font-xl);
+  }
+}
+
+.inline {
+  display: inline;
+}
